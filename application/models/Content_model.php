@@ -39,7 +39,7 @@ class Content_model extends CI_Model {
 	{
 		$dateString = "${year}-${month}";
 		$events = $this->monthlyEventsFor($dateString);
-		return array('month' => $month, 'year' => $year, 'dateString' => $dateString, 'events' => $events);
+		return $events;
 	}
 
 	public function get_content($id)

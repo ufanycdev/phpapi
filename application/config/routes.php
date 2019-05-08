@@ -51,8 +51,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 #$route['news/(:any)'] = 'news/view/$1';
 #
-$route['news'] = 'news';
+
+#let resources = { articles: 1, "65-2s": 2, classifieds: 3, events: 4, "5-5-5-5s": 5, videos: 6, "info-faxes": 7, "historical-fires": 8}
+
+
+$route['contents/(:any)'] = 'contents/view/$1';
 $route['contents'] = 'contents';
+$route['articles/index/(:any)'] = 'contents/catyear/1/$1';
+$route['search/(:any)'] = 'contents/search/$1';
+$route['65-2/index/(:any)'] = 'contents/catyear/2/$1';
+$route['classifieds/index/(:any)'] = 'contents/catyear/3/$1';
+$route['events/index/(:any)'] = 'contents/catyear/4/$1';
+$route['5-5-5-5s/index/(:any)'] = 'contents/catyear/5/$1';
+$route['videos/index/(:any)'] = 'contents/catyear/6/$1';
+$route['info-faxes/index/(:any)'] = 'contents/catyear/7/$1';
+$route['historical-fires/(:any)'] = 'contents/catyear/8/$1';
 $route['sources'] = 'sources';
-$route['(:any)'] = 'pages/view/$1';
-$route['default_controller'] = 'pages/view';
+$route['calendar/(:any)/(:any)'] = 'contents/monthly_events/$1/$2';
